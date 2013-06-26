@@ -83,8 +83,6 @@
 		CEDF2FF6177AC39700FBDCCC /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				CEDF2FFF177AC39800FBDCCC /* CardGameAppDelegate.h */,
-				CEDF3000177AC39800FBDCCC /* CardGameAppDelegate.m */,
 				CEDF3008177AC39800FBDCCC /* MainStoryboard.storyboard */,
 				CEDF300B177AC39800FBDCCC /* CardGameViewController.h */,
 				CEDF300C177AC39800FBDCCC /* CardGameViewController.m */,
@@ -96,6 +94,8 @@
 		CEDF2FF7177AC39700FBDCCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEDF2FFF177AC39800FBDCCC /* CardGameAppDelegate.h */,
+				CEDF3000177AC39800FBDCCC /* CardGameAppDelegate.m */,
 				CEDF2FF8177AC39700FBDCCC /* Matchismo-Info.plist */,
 				CEDF2FF9177AC39800FBDCCC /* InfoPlist.strings */,
 				CEDF2FFC177AC39800FBDCCC /* main.m */,
