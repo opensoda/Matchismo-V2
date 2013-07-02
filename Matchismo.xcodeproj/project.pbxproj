@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2227E7177D646C0055B22B /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2227E6177D646C0055B22B /* CardMatchingGame.m */; };
 		CEDF2FF1177AC39700FBDCCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF0177AC39700FBDCCC /* UIKit.framework */; };
 		CEDF2FF3177AC39700FBDCCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF2177AC39700FBDCCC /* Foundation.framework */; };
 		CEDF2FF5177AC39700FBDCCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF4177AC39700FBDCCC /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2227E5177D646C0055B22B /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		CE2227E6177D646C0055B22B /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		CEDF2FED177AC39700FBDCCC /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDF2FF0177AC39700FBDCCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEDF2FF2177AC39700FBDCCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +126,8 @@
 		CEDF3013177AD86400FBDCCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE2227E5177D646C0055B22B /* CardMatchingGame.h */,
+				CE2227E6177D646C0055B22B /* CardMatchingGame.m */,
 				CEDF3014177BC7ED00FBDCCC /* Card.h */,
 				CEDF3015177BC7ED00FBDCCC /* Card.m */,
 				CEDF3017177BC85500FBDCCC /* Deck.h */,
@@ -209,6 +214,7 @@
 				CEDF3019177BC85500FBDCCC /* Deck.m in Sources */,
 				CEDF301C177BC87500FBDCCC /* PlayingCard.m in Sources */,
 				CEDF301F177BC8AB00FBDCCC /* PlayingCardDeck.m in Sources */,
+				CE2227E7177D646C0055B22B /* CardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +337,7 @@
 				CEDF3012177AC39800FBDCCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
