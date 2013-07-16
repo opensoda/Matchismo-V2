@@ -24,6 +24,10 @@
 		CEDF301F177BC8AB00FBDCCC /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF301E177BC8AA00FBDCCC /* PlayingCardDeck.m */; };
 		CEFD7DBD178E5BA50034F36C /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DBB178E5BA50034F36C /* cardback.png */; };
 		CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */; };
+		CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC317938CA10034F36C /* GameResultViewController.m */; };
+		CEFD7DCA179392890034F36C /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC9179392890034F36C /* GameResult.m */; };
+		CEFD7DCC1793D9490034F36C /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCB1793D9490034F36C /* spade.png */; };
+		CEFD7DCE1793DD890034F36C /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCD1793DD890034F36C /* scores.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,12 @@
 		CEFD7DBB178E5BA50034F36C /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
 		CEFD7DBF178FFF8D0034F36C /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		CEFD7DC217938CA10034F36C /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
+		CEFD7DC317938CA10034F36C /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
+		CEFD7DC8179392890034F36C /* GameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResult.h; sourceTree = "<group>"; };
+		CEFD7DC9179392890034F36C /* GameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResult.m; sourceTree = "<group>"; };
+		CEFD7DCB1793D9490034F36C /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
+		CEFD7DCD1793DD890034F36C /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scores.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,10 @@
 			children = (
 				CEDF3013177AD86400FBDCCC /* Model */,
 				CEDF3008177AC39800FBDCCC /* MainStoryboard.storyboard */,
+				CEFD7DC8179392890034F36C /* GameResult.h */,
+				CEFD7DC9179392890034F36C /* GameResult.m */,
+				CEFD7DC217938CA10034F36C /* GameResultViewController.h */,
+				CEFD7DC317938CA10034F36C /* GameResultViewController.m */,
 				CEDF300B177AC39800FBDCCC /* CardGameViewController.h */,
 				CEDF300C177AC39800FBDCCC /* CardGameViewController.m */,
 				CEDF2FF7177AC39700FBDCCC /* Supporting Files */,
@@ -146,6 +160,8 @@
 		CEFD7DBA178E5BA50034F36C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEFD7DCD1793DD890034F36C /* scores.png */,
+				CEFD7DCB1793D9490034F36C /* spade.png */,
 				CEFD7DBB178E5BA50034F36C /* cardback.png */,
 			);
 			path = Images;
@@ -209,6 +225,8 @@
 				CEDF3007177AC39800FBDCCC /* Default-568h@2x.png in Resources */,
 				CEDF300A177AC39800FBDCCC /* MainStoryboard.storyboard in Resources */,
 				CEFD7DBD178E5BA50034F36C /* cardback.png in Resources */,
+				CEFD7DCC1793D9490034F36C /* spade.png in Resources */,
+				CEFD7DCE1793DD890034F36C /* scores.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +245,8 @@
 				CEDF301C177BC87500FBDCCC /* PlayingCard.m in Sources */,
 				CEDF301F177BC8AB00FBDCCC /* PlayingCardDeck.m in Sources */,
 				CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */,
+				CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */,
+				CEFD7DCA179392890034F36C /* GameResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

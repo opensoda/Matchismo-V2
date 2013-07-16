@@ -9,17 +9,18 @@
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "GameResult.h"
 
 @interface CardGameViewController ()
 
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
-
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *playModeSegmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) GameResult *gameResult;
 
 - (IBAction)playMode:(UISegmentedControl *)sender;
 - (IBAction)deal:(UIButton *)sender;
@@ -32,6 +33,11 @@
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
                                                           usingDeck:[[PlayingCardDeck alloc] init]];
     return _game;
+}
+
+- (GameResult * )gameResult {
+    if(!_gameResult) _gameResult = [[GameResult alloc] init];
+    return _gameResult;
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons {
@@ -99,6 +105,7 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+    self.gameResult.score = self.game.score;
 }
 
 - (IBAction)playMode:(UISegmentedControl *)sender {
@@ -108,6 +115,7 @@
 
 - (IBAction)deal:(UIButton *)sender {
     self.game = nil;
+    self.gameResult = nil;
     self.flipCount = 0;
     [self updateUI];
 }
