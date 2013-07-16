@@ -46,10 +46,13 @@
     [self updateUI];
 }
 
+
+#define DATE_FORMAT @"dd-MM-yyyy hh:mma"
+
 - (void)updateUI {
     NSString *displayText = @"";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mma"];
+    [dateFormatter setDateFormat:DATE_FORMAT];
     
     for (GameResult *gameResult in self.sortedGameResults) {
         displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %0gs)\n", gameResult.score, [dateFormatter stringFromDate:gameResult.end], round(gameResult.duration)];
