@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEA6C81917976EFC00C85126 /* README (deleted 4bdd58191270c22b69e14ba0da13761c).md in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81817976EFC00C85126 /* README (deleted 4bdd58191270c22b69e14ba0da13761c).md */; };
+		CEA6C81B179772DB00C85126 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81A179772DB00C85126 /* README.md */; };
 		CEDF2FF1177AC39700FBDCCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF0177AC39700FBDCCC /* UIKit.framework */; };
 		CEDF2FF3177AC39700FBDCCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF2177AC39700FBDCCC /* Foundation.framework */; };
 		CEDF2FF5177AC39700FBDCCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF4177AC39700FBDCCC /* CoreGraphics.framework */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEA6C81817976EFC00C85126 /* README (deleted 4bdd58191270c22b69e14ba0da13761c).md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README (deleted 4bdd58191270c22b69e14ba0da13761c).md"; sourceTree = "<group>"; };
+		CEA6C81A179772DB00C85126 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CEDF2FED177AC39700FBDCCC /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDF2FF0177AC39700FBDCCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEDF2FF2177AC39700FBDCCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,10 +85,10 @@
 		CEDF2FE4177AC39700FBDCCC = {
 			isa = PBXGroup;
 			children = (
+				CEA6C81A179772DB00C85126 /* README.md */,
 				CEDF2FF6177AC39700FBDCCC /* Matchismo */,
 				CEDF2FEF177AC39700FBDCCC /* Frameworks */,
 				CEDF2FEE177AC39700FBDCCC /* Products */,
-				CEA6C81817976EFC00C85126 /* README (deleted 4bdd58191270c22b69e14ba0da13761c).md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,7 +230,7 @@
 				CEFD7DBD178E5BA50034F36C /* cardback.png in Resources */,
 				CEFD7DCC1793D9490034F36C /* spade.png in Resources */,
 				CEFD7DCE1793DD890034F36C /* scores.png in Resources */,
-				CEA6C81917976EFC00C85126 /* README (deleted 4bdd58191270c22b69e14ba0da13761c).md in Resources */,
+				CEA6C81B179772DB00C85126 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
