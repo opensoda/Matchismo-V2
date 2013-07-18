@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CEA6C81B179772DB00C85126 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81A179772DB00C85126 /* README.md */; };
+		CEA6C81E1797A08E00C85126 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA6C81D1797A08E00C85126 /* SettingsViewController.m */; };
+		CEA6C8201797A30400C85126 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81F1797A30400C85126 /* settings.png */; };
+		CEA6C8221797A51100C85126 /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C8211797A51100C85126 /* set.png */; };
+		CEA6C8251797A69900C85126 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA6C8241797A69900C85126 /* SetGameViewController.m */; };
 		CEDF2FF1177AC39700FBDCCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF0177AC39700FBDCCC /* UIKit.framework */; };
 		CEDF2FF3177AC39700FBDCCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF2177AC39700FBDCCC /* Foundation.framework */; };
 		CEDF2FF5177AC39700FBDCCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF2FF4177AC39700FBDCCC /* CoreGraphics.framework */; };
@@ -33,6 +37,12 @@
 
 /* Begin PBXFileReference section */
 		CEA6C81A179772DB00C85126 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		CEA6C81C1797A08E00C85126 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CEA6C81D1797A08E00C85126 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CEA6C81F1797A30400C85126 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		CEA6C8211797A51100C85126 /* set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set.png; sourceTree = "<group>"; };
+		CEA6C8231797A69800C85126 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
+		CEA6C8241797A69900C85126 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
 		CEDF2FED177AC39700FBDCCC /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDF2FF0177AC39700FBDCCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEDF2FF2177AC39700FBDCCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +125,10 @@
 			children = (
 				CEDF3013177AD86400FBDCCC /* Model */,
 				CEDF3008177AC39800FBDCCC /* MainStoryboard.storyboard */,
+				CEA6C8231797A69800C85126 /* SetGameViewController.h */,
+				CEA6C8241797A69900C85126 /* SetGameViewController.m */,
+				CEA6C81C1797A08E00C85126 /* SettingsViewController.h */,
+				CEA6C81D1797A08E00C85126 /* SettingsViewController.m */,
 				CEFD7DC8179392890034F36C /* GameResult.h */,
 				CEFD7DC9179392890034F36C /* GameResult.m */,
 				CEFD7DC217938CA10034F36C /* GameResultViewController.h */,
@@ -163,9 +177,11 @@
 		CEFD7DBA178E5BA50034F36C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CEFD7DCD1793DD890034F36C /* scores.png */,
-				CEFD7DCB1793D9490034F36C /* spade.png */,
 				CEFD7DBB178E5BA50034F36C /* cardback.png */,
+				CEFD7DCD1793DD890034F36C /* scores.png */,
+				CEA6C8211797A51100C85126 /* set.png */,
+				CEA6C81F1797A30400C85126 /* settings.png */,
+				CEFD7DCB1793D9490034F36C /* spade.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -231,6 +247,8 @@
 				CEFD7DCC1793D9490034F36C /* spade.png in Resources */,
 				CEFD7DCE1793DD890034F36C /* scores.png in Resources */,
 				CEA6C81B179772DB00C85126 /* README.md in Resources */,
+				CEA6C8201797A30400C85126 /* settings.png in Resources */,
+				CEA6C8221797A51100C85126 /* set.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +269,8 @@
 				CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */,
 				CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */,
 				CEFD7DCA179392890034F36C /* GameResult.m in Sources */,
+				CEA6C81E1797A08E00C85126 /* SettingsViewController.m in Sources */,
+				CEA6C8251797A69900C85126 /* SetGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

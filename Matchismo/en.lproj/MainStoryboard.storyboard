@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vz7-jL-was">
@@ -344,18 +344,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="-460"/>
+            <point key="canvasLocation" x="93" y="-1184"/>
         </scene>
         <!--Game Result View Controller - Scores-->
         <scene sceneID="7bF-Ng-j8P">
             <objects>
                 <viewController id="Zok-zN-zZb" customClass="GameResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G7g-4k-ghy">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Score: 25 (22-01-2013 4:00PM, 35s)" id="r2k-o0-G1a">
-                                <rect key="frame" x="20" y="20" width="280" height="332"/>
+                                <rect key="frame" x="20" y="20" width="280" height="420"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -421,7 +421,7 @@
         <scene sceneID="FC1-4D-RLU">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="F60-f6-bUD" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iOR-j6-Yrq">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -429,16 +429,50 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="ce5-sx-RvA"/>
+                        <segue destination="egz-FR-MyB" kind="relationship" relationship="viewControllers" id="PZs-p3-3F1"/>
                         <segue destination="Zok-zN-zZb" kind="relationship" relationship="viewControllers" id="ZOh-PT-13c"/>
+                        <segue destination="Xcc-Xo-a7J" kind="relationship" relationship="viewControllers" id="tzo-3y-L66"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I6-z4-RFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-444" y="-168"/>
         </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="a4h-gC-LbQ">
+            <objects>
+                <viewController title="Settings" id="Xcc-Xo-a7J" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X7l-HX-m8h">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="f0U-e4-n6g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGq-WL-WqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="805"/>
+        </scene>
+        <!--Set Game View Controller - Set-->
+        <scene sceneID="fGe-8c-JeT">
+            <objects>
+                <viewController title="Set" id="egz-FR-MyB" customClass="SetGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zP2-xX-8YX">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Set" image="set.png" id="3gi-GY-hJg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrD-w9-pJB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="-531"/>
+        </scene>
     </scenes>
     <resources>
         <image name="scores.png" width="30" height="30"/>
+        <image name="set.png" width="30" height="30"/>
+        <image name="settings.png" width="30" height="30"/>
         <image name="spade.png" width="30" height="30"/>
     </resources>
     <classes>
@@ -464,10 +498,16 @@
                 <relationship kind="outlet" name="display" candidateClass="UITextView"/>
             </relationships>
         </class>
+        <class className="SetGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
