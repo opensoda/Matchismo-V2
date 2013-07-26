@@ -9,24 +9,44 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 
-typedef NS_ENUM(NSInteger, PlayMode) {
-    Two_Card_Match,
-    Three_Card_Match
+typedef NS_ENUM(NSInteger, GameType) {
+    GameType_Unknown,
+    GameType_MatchCardGame,
+    GameType_SetCardGame
+};
+
+typedef NS_ENUM(NSInteger, MatchingMode) {
+    MatchingMode_Unknown,
+    MatchingMode_TwoCardMatch = 2,
+    MatchingMode_ThreeCardMatch = 3
 };
 
 @interface CardMatchingGame : NSObject
 
-- (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck;
+@property (nonatomic) GameType gameType;
+@property (nonatomic) MatchingMode matchingMode;
+
+@property (nonatomic, readonly) int score;
+
+@property (strong, nonatomic, readonly) NSMutableArray *flippedCards;
+@property (nonatomic, readonly) int flipScore;
+
+
+// designated initializer
+- (id)initWithCardCount:(NSUInteger)cardCount
+              usingDeck:(Deck *)deck;
+
+// convenience initializer
+- (id)initWithCardCount:(NSUInteger)cardCount
+              usingDeck:(Deck *)deck
+               gameType:(GameType)gameType
+           matchingMode:(MatchingMode)matchingMode;
 
 - (void)flipCardAtIndex:(NSUInteger)index;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-@property (nonatomic) PlayMode playMode;
-@property (nonatomic, readonly) int score;
-
-@property (strong, nonatomic, readonly) NSMutableArray *flipCards;
-@property (nonatomic, readonly) int flipScore;
+- (NSString *)gameTypeToString;
 
 
 @end
