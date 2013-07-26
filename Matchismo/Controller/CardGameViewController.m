@@ -9,12 +9,12 @@
 #import "CardGameViewController.h"
 
 
-#import "GameResult.h"
+#import "CardMatchingGameResult.h"
 
 @interface CardGameViewController ()
 
 @property (nonatomic, readwrite) int flipCount;
-@property (strong, nonatomic) GameResult *gameResult;
+@property (strong, nonatomic) CardMatchingGameResult *gameResult;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
@@ -35,9 +35,9 @@
     return _game;
 }
 
-- (GameResult * )gameResult {
+- (CardMatchingGameResult * )gameResult {
     if(!_gameResult) {
-        _gameResult = [[GameResult alloc] init];
+        _gameResult = [[CardMatchingGameResult alloc] init];
         _gameResult.gameType = [self.game gameTypeToString];
     }
     return _gameResult;

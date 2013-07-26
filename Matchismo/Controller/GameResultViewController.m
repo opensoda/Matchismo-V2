@@ -7,7 +7,7 @@
 //
 
 #import "GameResultViewController.h"
-#import "GameResult.h"
+#import "CardMatchingGameResult.h"
 
 @interface GameResultViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *display;
@@ -21,7 +21,7 @@
 @implementation GameResultViewController
 
 - (NSArray *)sortedGameResults {
-    if (!_sortedGameResults) _sortedGameResults = [[GameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDate:)];
+    if (!_sortedGameResults) _sortedGameResults = [[CardMatchingGameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDate:)];
     return _sortedGameResults;
 }
 
@@ -54,7 +54,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:DATE_FORMAT];
     
-    for (GameResult *gameResult in self.sortedGameResults) {
+    for (CardMatchingGameResult *gameResult in self.sortedGameResults) {
         displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %@, %0gs)\n", gameResult.score, gameResult.gameType,[dateFormatter stringFromDate:gameResult.end], round(gameResult.duration)];
     }
     self.display.text = displayText;
@@ -62,17 +62,17 @@
 
 
 - (IBAction)date:(UIButton *)sender {
-    self.sortedGameResults = [[GameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDate:)];
+    self.sortedGameResults = [[CardMatchingGameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDate:)];
     [self updateUI];
 }
 
 - (IBAction)score:(UIButton *)sender {
-    self.sortedGameResults = [[GameResult allGameResults]sortedArrayUsingSelector:@selector(compareByScore:)];
+    self.sortedGameResults = [[CardMatchingGameResult allGameResults]sortedArrayUsingSelector:@selector(compareByScore:)];
     [self updateUI];
 }
 
 - (IBAction)duration:(id)sender {
-    self.sortedGameResults = [[GameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDuration:)];
+    self.sortedGameResults = [[CardMatchingGameResult allGameResults]sortedArrayUsingSelector:@selector(compareByDuration:)];
     [self updateUI];
 }
 

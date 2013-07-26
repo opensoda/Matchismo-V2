@@ -1,19 +1,19 @@
 //
-//  GameResult.m
+//  CardMatchingGameResult.m
 //  Matchismo
 //
 //  Created by Scott Rogers on 15/07/13.
 //  Copyright (c) 2013 opensoda. All rights reserved.
 //
 
-#import "GameResult.h"
+#import "CardMatchingGameResult.h"
 
-@interface GameResult()
+@interface CardMatchingGameResult()
 @property (readwrite, nonatomic) NSDate *start;
 @property (readwrite, nonatomic) NSDate *end;
 @end
 
-@implementation GameResult
+@implementation CardMatchingGameResult
 
 #define ALL_RESULTS_KEY @"GameResults_All"
 #define START_KEY @"StartDate"
@@ -25,7 +25,7 @@
     NSMutableArray *allGameResults = [[NSMutableArray alloc] init];
     
     for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]) {
-        GameResult  *gameResult = [[GameResult alloc] initFromPropertyList:plist];
+        CardMatchingGameResult  *gameResult = [[CardMatchingGameResult alloc] initFromPropertyList:plist];
         [allGameResults addObject:gameResult];
     }
     
@@ -81,13 +81,13 @@
     return @{ START_KEY : self.start, END_KEY : self.end, SCORE_KEY : @(self.score), GAME_TYPE_KEY : self.gameType };
 }
 
-- (NSComparisonResult)compareByDate:(GameResult *)otherGameResult {
+- (NSComparisonResult)compareByDate:(CardMatchingGameResult *)otherGameResult {
     return [otherGameResult.end compare:self.end]; // reverse chronological order
 }
-- (NSComparisonResult)compareByScore:(GameResult *)otherGameResult {
+- (NSComparisonResult)compareByScore:(CardMatchingGameResult *)otherGameResult {
     return [@(otherGameResult.score) compare:@(self.score)]; // descending order
 }
-- (NSComparisonResult)compareByDuration:(GameResult *)otherGameResult {
+- (NSComparisonResult)compareByDuration:(CardMatchingGameResult *)otherGameResult {
     return [@(self.duration) compare:@(otherGameResult.duration)]; // ascending order
 }
 

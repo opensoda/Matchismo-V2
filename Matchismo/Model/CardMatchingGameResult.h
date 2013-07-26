@@ -1,5 +1,5 @@
 //
-//  GameResult.h
+//  CardMatchingGameResult.h
 //  Matchismo
 //
 //  Created by Scott Rogers on 15/07/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameResult : NSObject
+@interface CardMatchingGameResult : NSObject
 
 + (NSArray *)allGameResults; // of GameResult
 
@@ -18,9 +18,9 @@
 @property (nonatomic) int score;
 @property (nonatomic) NSString *gameType;
 
-- (NSComparisonResult)compareByDate:(GameResult *)otherGameResult;
-- (NSComparisonResult)compareByScore:(GameResult *)otherGameResult;
-- (NSComparisonResult)compareByDuration:(GameResult *)otherGameResult;
+- (NSComparisonResult)compareByDate:(CardMatchingGameResult *)otherGameResult;
+- (NSComparisonResult)compareByScore:(CardMatchingGameResult *)otherGameResult;
+- (NSComparisonResult)compareByDuration:(CardMatchingGameResult *)otherGameResult;
 
 @end
 

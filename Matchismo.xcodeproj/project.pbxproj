@@ -33,7 +33,7 @@
 		CEFD7DBD178E5BA50034F36C /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DBB178E5BA50034F36C /* cardback.png */; };
 		CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */; };
 		CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC317938CA10034F36C /* GameResultViewController.m */; };
-		CEFD7DCA179392890034F36C /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC9179392890034F36C /* GameResult.m */; };
+		CEFD7DCA179392890034F36C /* CardMatchingGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */; };
 		CEFD7DCC1793D9490034F36C /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCB1793D9490034F36C /* spade.png */; };
 		CEFD7DCE1793DD890034F36C /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCD1793DD890034F36C /* scores.png */; };
 /* End PBXBuildFile section */
@@ -81,8 +81,8 @@
 		CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		CEFD7DC217938CA10034F36C /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultViewController.h; path = Controller/GameResultViewController.h; sourceTree = "<group>"; };
 		CEFD7DC317938CA10034F36C /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultViewController.m; path = Controller/GameResultViewController.m; sourceTree = "<group>"; };
-		CEFD7DC8179392890034F36C /* GameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResult.h; path = Model/GameResult.h; sourceTree = "<group>"; };
-		CEFD7DC9179392890034F36C /* GameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResult.m; path = Model/GameResult.m; sourceTree = "<group>"; };
+		CEFD7DC8179392890034F36C /* CardMatchingGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGameResult.h; path = Model/CardMatchingGameResult.h; sourceTree = "<group>"; };
+		CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGameResult.m; path = Model/CardMatchingGameResult.m; sourceTree = "<group>"; };
 		CEFD7DCB1793D9490034F36C /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
 		CEFD7DCD1793DD890034F36C /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scores.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,16 +104,16 @@
 		CE98669A17A248CE007CD035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CEFD7DC217938CA10034F36C /* GameResultViewController.h */,
-				CEFD7DC317938CA10034F36C /* GameResultViewController.m */,
-				CEA6C81C1797A08E00C85126 /* SettingsViewController.h */,
-				CEA6C81D1797A08E00C85126 /* SettingsViewController.m */,
-				CEA6C82F179A8C7E00C85126 /* SetCardGameViewController.h */,
-				CEA6C830179A8C7E00C85126 /* SetCardGameViewController.m */,
 				CEDF300B177AC39800FBDCCC /* CardGameViewController.h */,
 				CEDF300C177AC39800FBDCCC /* CardGameViewController.m */,
 				CEA6C82C179A88BD00C85126 /* PlayingCardGameViewController.h */,
 				CEA6C82D179A88BD00C85126 /* PlayingCardGameViewController.m */,
+				CEA6C82F179A8C7E00C85126 /* SetCardGameViewController.h */,
+				CEA6C830179A8C7E00C85126 /* SetCardGameViewController.m */,
+				CEFD7DC217938CA10034F36C /* GameResultViewController.h */,
+				CEFD7DC317938CA10034F36C /* GameResultViewController.m */,
+				CEA6C81C1797A08E00C85126 /* SettingsViewController.h */,
+				CEA6C81D1797A08E00C85126 /* SettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,8 +196,8 @@
 			children = (
 				CEFD7DBF178FFF8D0034F36C /* CardMatchingGame.h */,
 				CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */,
-				CEFD7DC8179392890034F36C /* GameResult.h */,
-				CEFD7DC9179392890034F36C /* GameResult.m */,
+				CEFD7DC8179392890034F36C /* CardMatchingGameResult.h */,
+				CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */,
 				CEDF3014177BC7ED00FBDCCC /* Card.h */,
 				CEDF3015177BC7ED00FBDCCC /* Card.m */,
 				CEDF3017177BC85500FBDCCC /* Deck.h */,
@@ -309,7 +309,7 @@
 				CEDF301F177BC8AB00FBDCCC /* PlayingCardDeck.m in Sources */,
 				CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */,
 				CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */,
-				CEFD7DCA179392890034F36C /* GameResult.m in Sources */,
+				CEFD7DCA179392890034F36C /* CardMatchingGameResult.m in Sources */,
 				CEA6C81E1797A08E00C85126 /* SettingsViewController.m in Sources */,
 				CEA6C8281797BA2800C85126 /* SetCard.m in Sources */,
 				CEA6C82B1797BA6E00C85126 /* SetCardDeck.m in Sources */,
