@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CardMatchingGame.h"
+#import "CardGameSettings.h"
 #import "Deck.h"
 
 
@@ -19,6 +20,9 @@
 - (Deck *)createDeck;    // abstract
 - (GameType)gameType; // abstract
 - (MatchingMode)matchingMode; // abstract
+- (int)matchBonus; // abstract
+- (int)mismatchPenalty; // abstract
+- (int)flipCost; // abstract
 
 - (NSAttributedString *)attributedStringForCard:(Card *)card; // abstract
 

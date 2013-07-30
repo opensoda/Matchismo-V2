@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE9866BB17A7828C007CD035 /* CardGameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9866BA17A7828C007CD035 /* CardGameSettings.m */; };
 		CEA6C81B179772DB00C85126 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81A179772DB00C85126 /* README.md */; };
 		CEA6C81E1797A08E00C85126 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA6C81D1797A08E00C85126 /* SettingsViewController.m */; };
 		CEA6C8201797A30400C85126 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA6C81F1797A30400C85126 /* settings.png */; };
@@ -33,12 +34,14 @@
 		CEFD7DBD178E5BA50034F36C /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DBB178E5BA50034F36C /* cardback.png */; };
 		CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */; };
 		CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC317938CA10034F36C /* GameResultViewController.m */; };
-		CEFD7DCA179392890034F36C /* CardMatchingGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */; };
+		CEFD7DCA179392890034F36C /* CardGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD7DC9179392890034F36C /* CardGameResult.m */; };
 		CEFD7DCC1793D9490034F36C /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCB1793D9490034F36C /* spade.png */; };
 		CEFD7DCE1793DD890034F36C /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFD7DCD1793DD890034F36C /* scores.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE9866B917A7828C007CD035 /* CardGameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardGameSettings.h; path = Model/CardGameSettings.h; sourceTree = "<group>"; };
+		CE9866BA17A7828C007CD035 /* CardGameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardGameSettings.m; path = Model/CardGameSettings.m; sourceTree = "<group>"; };
 		CEA6C81A179772DB00C85126 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CEA6C81C1797A08E00C85126 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controller/SettingsViewController.h; sourceTree = "<group>"; };
 		CEA6C81D1797A08E00C85126 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controller/SettingsViewController.m; sourceTree = "<group>"; };
@@ -81,8 +84,8 @@
 		CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		CEFD7DC217938CA10034F36C /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultViewController.h; path = Controller/GameResultViewController.h; sourceTree = "<group>"; };
 		CEFD7DC317938CA10034F36C /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultViewController.m; path = Controller/GameResultViewController.m; sourceTree = "<group>"; };
-		CEFD7DC8179392890034F36C /* CardMatchingGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGameResult.h; path = Model/CardMatchingGameResult.h; sourceTree = "<group>"; };
-		CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGameResult.m; path = Model/CardMatchingGameResult.m; sourceTree = "<group>"; };
+		CEFD7DC8179392890034F36C /* CardGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardGameResult.h; path = Model/CardGameResult.h; sourceTree = "<group>"; };
+		CEFD7DC9179392890034F36C /* CardGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardGameResult.m; path = Model/CardGameResult.m; sourceTree = "<group>"; };
 		CEFD7DCB1793D9490034F36C /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
 		CEFD7DCD1793DD890034F36C /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scores.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,8 +199,10 @@
 			children = (
 				CEFD7DBF178FFF8D0034F36C /* CardMatchingGame.h */,
 				CEFD7DC0178FFF8D0034F36C /* CardMatchingGame.m */,
-				CEFD7DC8179392890034F36C /* CardMatchingGameResult.h */,
-				CEFD7DC9179392890034F36C /* CardMatchingGameResult.m */,
+				CEFD7DC8179392890034F36C /* CardGameResult.h */,
+				CEFD7DC9179392890034F36C /* CardGameResult.m */,
+				CE9866B917A7828C007CD035 /* CardGameSettings.h */,
+				CE9866BA17A7828C007CD035 /* CardGameSettings.m */,
 				CEDF3014177BC7ED00FBDCCC /* Card.h */,
 				CEDF3015177BC7ED00FBDCCC /* Card.m */,
 				CEDF3017177BC85500FBDCCC /* Deck.h */,
@@ -309,12 +314,13 @@
 				CEDF301F177BC8AB00FBDCCC /* PlayingCardDeck.m in Sources */,
 				CEFD7DC1178FFF8D0034F36C /* CardMatchingGame.m in Sources */,
 				CEFD7DC417938CA10034F36C /* GameResultViewController.m in Sources */,
-				CEFD7DCA179392890034F36C /* CardMatchingGameResult.m in Sources */,
+				CEFD7DCA179392890034F36C /* CardGameResult.m in Sources */,
 				CEA6C81E1797A08E00C85126 /* SettingsViewController.m in Sources */,
 				CEA6C8281797BA2800C85126 /* SetCard.m in Sources */,
 				CEA6C82B1797BA6E00C85126 /* SetCardDeck.m in Sources */,
 				CEA6C82E179A88BD00C85126 /* PlayingCardGameViewController.m in Sources */,
 				CEA6C831179A8C7F00C85126 /* SetCardGameViewController.m in Sources */,
+				CE9866BB17A7828C007CD035 /* CardGameSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

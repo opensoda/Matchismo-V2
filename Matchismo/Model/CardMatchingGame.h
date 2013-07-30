@@ -25,12 +25,16 @@ typedef NS_ENUM(NSInteger, MatchingMode) {
 
 @property (nonatomic) GameType gameType;
 @property (nonatomic) MatchingMode matchingMode;
+@property (nonatomic) int matchBonus;
+@property (nonatomic) int mismatchPenalty;
+@property (nonatomic) int flipCost;
 
 @property (nonatomic, readonly) int score;
 
 @property (strong, nonatomic, readonly) NSMutableArray *flippedCards;
 @property (nonatomic, readonly) int flipScore;
 
++ (NSString *)stringForGameType:(GameType)gameType;
 
 // designated initializer
 - (id)initWithCardCount:(NSUInteger)cardCount
@@ -39,14 +43,17 @@ typedef NS_ENUM(NSInteger, MatchingMode) {
 // convenience initializer
 - (id)initWithCardCount:(NSUInteger)cardCount
               usingDeck:(Deck *)deck
-               gameType:(GameType)gameType
-           matchingMode:(MatchingMode)matchingMode;
+           gameType:(GameType)gameType
+           matchingMode:(MatchingMode)matchingMode
+             matchBonus:(int)matchBonus
+        mismatchPenalty:(int)mismatchPenalty
+               flipCost:(int)flipCost;
 
 - (void)flipCardAtIndex:(NSUInteger)index;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-- (NSString *)gameTypeToString;
+
 
 
 @end

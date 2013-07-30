@@ -466,9 +466,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="1Ja-sc-fhF">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minimumValue="2" maximumValue="10" stepValue="2" id="1Ja-sc-fhF">
                                 <rect key="frame" x="206" y="46" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="matchMatchBonus:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="RVt-C8-n8o"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Match Bonus:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yd6-zk-wjn">
                                 <rect key="frame" x="20" y="49" width="110" height="21"/>
@@ -478,15 +481,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fhM-hV-cS0">
-                                <rect key="frame" x="149" y="49" width="42" height="21"/>
+                                <rect key="frame" x="167" y="49" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="YnO-hj-nuT">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" maximumValue="5" id="YnO-hj-nuT">
                                 <rect key="frame" x="206" y="81" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="matchMismatchPenalty:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="Yiq-KX-I6m"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mismatch Penalty:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pBj-Io-bbn">
                                 <rect key="frame" x="20" y="84" width="139" height="21"/>
@@ -496,15 +502,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xd8-OE-FGG">
-                                <rect key="frame" x="149" y="84" width="42" height="21"/>
+                                <rect key="frame" x="167" y="84" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Q5W-eM-4zZ">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="5" id="Q5W-eM-4zZ">
                                 <rect key="frame" x="206" y="116" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="matchFlipCost:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="y2e-sP-KNQ"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flip Cost:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qTx-QE-8fZ">
                                 <rect key="frame" x="20" y="119" width="110" height="21"/>
@@ -514,15 +523,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0b8-Xf-XpR">
-                                <rect key="frame" x="149" y="116" width="42" height="21"/>
+                                <rect key="frame" x="167" y="116" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="tEr-aM-QIB">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minimumValue="2" maximumValue="10" stepValue="2" id="tEr-aM-QIB">
                                 <rect key="frame" x="206" y="174" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="setMatchBonus:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="dh5-bd-3Jl"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Match Bonus:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32X-ZI-Pkv">
                                 <rect key="frame" x="20" y="177" width="110" height="21"/>
@@ -531,16 +543,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2MH-Hp-fDT">
-                                <rect key="frame" x="149" y="177" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2MH-Hp-fDT">
+                                <rect key="frame" x="167" y="177" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="9GC-VG-7US">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" maximumValue="5" id="9GC-VG-7US">
                                 <rect key="frame" x="206" y="209" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="setMismatchPenalty:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="JoR-6A-POJ"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mismatch Penalty:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kLL-Xr-LcS">
                                 <rect key="frame" x="20" y="215" width="139" height="21"/>
@@ -549,16 +564,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDj-P3-Tee">
-                                <rect key="frame" x="149" y="215" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDj-P3-Tee">
+                                <rect key="frame" x="167" y="215" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="5HX-0W-dSf">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" id="5HX-0W-dSf">
                                 <rect key="frame" x="206" y="244" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="setFlipCost:" destination="Xcc-Xo-a7J" eventType="valueChanged" id="rcW-cT-R4g"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flip Cost:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3v8-N9-eaW">
                                 <rect key="frame" x="20" y="247" width="110" height="21"/>
@@ -567,8 +585,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdA-uf-OBh">
-                                <rect key="frame" x="149" y="247" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdA-uf-OBh">
+                                <rect key="frame" x="167" y="247" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -589,7 +607,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AlU-bP-lra">
-                                <rect key="frame" x="206" y="305" width="94" height="21"/>
+                                <rect key="frame" x="206" y="303" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Delete...">
@@ -599,6 +617,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteAllScores:" destination="Xcc-Xo-a7J" eventType="touchUpInside" id="u8i-vb-Z0D"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Default Settings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h9c-Xu-fNf">
                                 <rect key="frame" x="20" y="370" width="125" height="21"/>
@@ -608,7 +629,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bBn-uq-kaY">
-                                <rect key="frame" x="206" y="371" width="94" height="21"/>
+                                <rect key="frame" x="206" y="368" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Restore...">
@@ -618,11 +639,28 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="restoreDefaultSettings:" destination="Xcc-Xo-a7J" eventType="touchUpInside" id="PTI-sh-4pj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="f0U-e4-n6g"/>
+                    <connections>
+                        <outlet property="matchFlipCost" destination="Q5W-eM-4zZ" id="lNr-Ty-MGd"/>
+                        <outlet property="matchFlipCostLabel" destination="0b8-Xf-XpR" id="Z2Q-Q4-Sin"/>
+                        <outlet property="matchMatchBonus" destination="1Ja-sc-fhF" id="tlj-C0-BRJ"/>
+                        <outlet property="matchMatchBonusLabel" destination="fhM-hV-cS0" id="Whk-GQ-wqm"/>
+                        <outlet property="matchMismatchPenalty" destination="YnO-hj-nuT" id="r1D-gZ-zFd"/>
+                        <outlet property="matchMismatchPenaltyLabel" destination="xd8-OE-FGG" id="Up9-AC-VqF"/>
+                        <outlet property="setFlipCost" destination="5HX-0W-dSf" id="jNy-di-QHF"/>
+                        <outlet property="setFlipCostLabel" destination="KdA-uf-OBh" id="hno-E8-FEg"/>
+                        <outlet property="setMatchBonus" destination="tEr-aM-QIB" id="WLf-Jn-ggW"/>
+                        <outlet property="setMatchBonusLabel" destination="2MH-Hp-fDT" id="y5W-wa-0fO"/>
+                        <outlet property="setMismatchPenalty" destination="9GC-VG-7US" id="f4G-t4-pxR"/>
+                        <outlet property="setMismatchPenaltyLabel" destination="nDj-P3-Tee" id="Yjh-Kd-Kmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGq-WL-WqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1081,7 +1119,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="deal:" candidateClass="UIButton"/>
-                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipResultsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
@@ -1109,6 +1146,28 @@
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="deleteAllScores:" candidateClass="UIButton"/>
+                <relationship kind="action" name="matchFlipCost:" candidateClass="UIStepper"/>
+                <relationship kind="action" name="matchMatchBonus:" candidateClass="UIStepper"/>
+                <relationship kind="action" name="matchMismatchPenalty:" candidateClass="UIStepper"/>
+                <relationship kind="action" name="restoreDefaultSettings:" candidateClass="UIButton"/>
+                <relationship kind="action" name="setFlipCost:" candidateClass="UIStepper"/>
+                <relationship kind="action" name="setMatchBonus:" candidateClass="UIStepper"/>
+                <relationship kind="action" name="setMismatchPenalty:" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="matchFlipCost" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="matchFlipCostLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="matchMatchBonus" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="matchMatchBonusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="matchMismatchPenalty" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="matchMismatchPenaltyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="setFlipCost" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="setFlipCostLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="setMatchBonus" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="setMatchBonusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="setMismatchPenalty" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="setMismatchPenaltyLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

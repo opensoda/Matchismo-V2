@@ -13,13 +13,31 @@
 @property (nonatomic, readwrite) int score;
 @property (strong, nonatomic, readwrite) NSMutableArray *flippedCards;
 @property (nonatomic, readwrite) int flipScore;
+
 @end
 
 @implementation CardMatchingGame
 
-#define MATCH_BONUS 4 
-#define MISMATCH_PENALTY 2
-#define FLIP_COST 1
++ (NSString *)stringForGameType:(GameType)gameType {
+    
+    NSString *gameTypeString = @"";
+    
+    switch (gameType) {
+        case GameType_Unknown:
+            gameTypeString = @"Unknown";
+            break;
+        case GameType_MatchCardGame:
+            gameTypeString = @"Match";
+            break;
+        case GameType_SetCardGame:
+            gameTypeString = @"Set";
+            break;
+        default:
+            break;
+    }
+    return gameTypeString;
+}
+
 
 - (NSMutableArray *)cards {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
@@ -54,12 +72,19 @@
 - (id)initWithCardCount:(NSUInteger)cardCount
               usingDeck:(Deck *)deck
                gameType:(GameType)gameType
-           matchingMode:(MatchingMode)matchingMode {
+           matchingMode:(MatchingMode)matchingMode
+             matchBonus:(int)matchBonus
+        mismatchPenalty:(int)mismatchPenalty
+               flipCost:(int)flipCost {
+    
     self = [self initWithCardCount:cardCount usingDeck:deck];
     
     if (self) {
         self.gameType = gameType;
         self.matchingMode = matchingMode;
+        self.matchBonus = matchBonus;
+        self.mismatchPenalty = mismatchPenalty;
+        self.flipCost = flipCost;
     }
     
     return self;
@@ -100,7 +125,7 @@
                             for(Card *otherCard in otherCards) {
                                 otherCard.faceUp = NO;
                             }
-                            self.flipScore -= MISMATCH_PENALTY;
+                            self.flipScore -= self.mismatchPenalty;
                         }
                         self.score += self.flipScore;
                         matchChecked = YES;
@@ -108,7 +133,7 @@
                 }
                 if (matchChecked) break;
             }
-            self.score -= FLIP_COST;
+            self.score -= self.flipCost;
         }
         card.faceUp = !card.isFaceUp;
     }
@@ -118,25 +143,6 @@
     return (index < self.cards.count) ? self.cards[index] : nil;
 }
 
-- (NSString *)gameTypeToString {
-    
-    NSString *gameTypeString = @"";
-    
-    switch (self.gameType) {
-        case GameType_Unknown:
-            gameTypeString = @"Unknown";
-            break;
-        case GameType_MatchCardGame:
-            gameTypeString = @"Match";
-            break;
-        case GameType_SetCardGame:
-            gameTypeString = @"Set";
-            break;
-        default:
-            break;
-    }
-    return gameTypeString;    
-}
 
 - (int)applyMatchBonusToMatchScore:(int)matchScore {
     
@@ -145,21 +151,21 @@
     if (self.gameType == GameType_MatchCardGame) {
         
         if (self.matchingMode == MatchingMode_TwoCardMatch) {
-            matchBonus = MATCH_BONUS;
+            matchBonus = self.matchBonus;
         }
         else if (self.matchingMode == MatchingMode_ThreeCardMatch)
         {
             switch (matchScore) {
                 case 1:         // 1 suit match
                 case 4:         // 1 rank match
-                    matchBonus = MATCH_BONUS / 2;
+                    matchBonus = self.matchBonus / 2;
                     break;
                 case 5:         // 1 suit match & 1 rank match
-                    matchBonus = MATCH_BONUS;
+                    matchBonus = self.matchBonus;
                     break;
                 case 3:         // 3 suit matches
                 case 12:        // 3 rank matches
-                    matchBonus = MATCH_BONUS * 2;
+                    matchBonus = self.matchBonus * 2;
                     break;
                 default:
                     break;
@@ -168,7 +174,7 @@
     }
     else if (self.gameType == GameType_SetCardGame)
     {
-        matchBonus = MATCH_BONUS * 4;
+        matchBonus = self.matchBonus;
     }
     
     return matchScore *  matchBonus;

@@ -7,14 +7,12 @@
 //
 
 #import "CardGameViewController.h"
-
-
-#import "CardMatchingGameResult.h"
+#import "CardGameResult.h"
 
 @interface CardGameViewController ()
 
 @property (nonatomic, readwrite) int flipCount;
-@property (strong, nonatomic) CardMatchingGameResult *gameResult;
+@property (strong, nonatomic) CardGameResult *gameResult;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
@@ -29,16 +27,20 @@
 
 - (CardMatchingGame *)game {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+                         
                                                           usingDeck:[self createDeck]
-                                                           gameType:[self gameType]
-                                                       matchingMode:[self matchingMode]];
+                                                       gameType:[self gameType]
+                                                       matchingMode:[self matchingMode]
+                                                         matchBonus:[self matchBonus]
+                                                    mismatchPenalty:[self mismatchPenalty]
+                                                           flipCost:[self flipCost]];
     return _game;
 }
 
-- (CardMatchingGameResult * )gameResult {
+- (CardGameResult *)gameResult {
     if(!_gameResult) {
-        _gameResult = [[CardMatchingGameResult alloc] init];
-        _gameResult.gameType = [self.game gameTypeToString];
+        _gameResult = [[CardGameResult alloc] init];
+        _gameResult.gameType = [CardMatchingGame stringForGameType:self.game.gameType];
     }
     return _gameResult;
 }
@@ -53,6 +55,18 @@
 
 - (MatchingMode)matchingMode {
     return MatchingMode_Unknown;
+} // abstract
+
+- (int)matchBonus {
+    return 0;
+} // abstract
+
+- (int)mismatchPenalty {
+    return 0;
+} // abstract
+
+- (int)flipCost {
+    return 0;
 } // abstract
 
 - (void)setCardButtons:(NSArray *)cardButtons {

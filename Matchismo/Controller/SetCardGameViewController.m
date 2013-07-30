@@ -28,6 +28,18 @@
     return MatchingMode_ThreeCardMatch;
 }
 
+- (int)matchBonus {
+    return [CardGameSettings integerValueForKey:SETCARDGAME_MATCHBONUS_KEY];
+}
+
+- (int)mismatchPenalty {
+     return [CardGameSettings integerValueForKey:SETCARDGAME_MISMATCHPENALTY_KEY];
+}
+
+- (int)flipCost {
+     return [CardGameSettings integerValueForKey:SETCARDGAME_FLIPCOST_KEY];
+}
+
 - (void)updateCardButton:(UIButton *)cardButton
                 withCard:(Card *)card {
 

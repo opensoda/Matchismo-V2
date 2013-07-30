@@ -21,7 +21,6 @@
 
 @implementation PlayingCardGameViewController
 
-
 - (Deck *)createDeck {
     return [[PlayingCardDeck alloc] init];
 }
@@ -34,6 +33,17 @@
     return self.playModeSegmentedControl.selectedSegmentIndex == 0 ? MatchingMode_TwoCardMatch : MatchingMode_ThreeCardMatch;
 }
 
+- (int)matchBonus {
+    return [CardGameSettings integerValueForKey:MATCHCARDGAME_MATCHBONUS_KEY];
+}
+
+- (int)mismatchPenalty {
+    return [CardGameSettings integerValueForKey:MATCHCARDGAME_MISMATCHPENALTY_KEY];
+}
+
+- (int)flipCost {
+    return [CardGameSettings integerValueForKey:MATCHCARDGAME_FLIPCOST_KEY];
+}
 - (void)updateSubClassUI{
     [self updatePlayMode];
 }
