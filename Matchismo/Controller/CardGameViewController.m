@@ -26,7 +26,7 @@
 @implementation CardGameViewController
 
 - (CardMatchingGame *)game {
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                          
                                                           usingDeck:[self createDeck]
                                                        gameType:[self gameType]
@@ -120,7 +120,7 @@
             if (![card isEqual:[self.game.flippedCards lastObject]]) [cardsToInsert appendAttributedString:[[NSAttributedString alloc] initWithString:@"&"]];
         }
         
-        if (self.game.flippedCards.count == 0) { // no cards flipped up
+        if ([self.game.flippedCards count] == 0) { // no cards flipped up
             [results appendAttributedString:[[NSAttributedString alloc] initWithString:@""]];
             
         } else if (self.game.flipScore == 0) { // flipped card(s)

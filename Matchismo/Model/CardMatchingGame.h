@@ -51,7 +51,17 @@ typedef NS_ENUM(NSInteger, MatchingMode) {
 
 - (void)flipCardAtIndex:(NSUInteger)index;
 
+- (void)deleteCardAtIndex:(NSUInteger)index;
+
 - (Card *)cardAtIndex:(NSUInteger)index;
+
+- (NSUInteger)indexOfCard:(Card *)card;
+
+- (NSUInteger)cardsCount;
+
+- (void)dealCardCount:(NSUInteger)cardCount;
+
+
 
 
 

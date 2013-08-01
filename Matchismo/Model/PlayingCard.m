@@ -15,7 +15,7 @@
     int score = 0;
     PlayingCard *playingCard1 = self;
     
-    if (othercards.count == 1) {
+    if ([othercards count] == 1) {
         id otherCard = [othercards lastObject];
         if ([otherCard isKindOfClass:[PlayingCard class]]) {
             PlayingCard *playingCard2 = (PlayingCard *)otherCard;
@@ -25,7 +25,7 @@
                 score += 4;
             }
         }
-    } else if (othercards.count == 2) {
+    } else if ([othercards count] == 2) {
         id otherCard2 = othercards[0];
         id otherCard3 = othercards[1];
         if ([otherCard2 isKindOfClass:[PlayingCard class]] && [otherCard3 isKindOfClass:[PlayingCard class]] ) {
@@ -69,7 +69,7 @@
 }
 
 + (NSUInteger)maxRank {
-    return [self rankStrings].count-1;
+    return [[self rankStrings] count]-1;
 }
 
 - (void)setRank:(NSUInteger)rank {

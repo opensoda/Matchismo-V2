@@ -15,22 +15,22 @@ typedef NS_ENUM(int, SetNumber) {
 };
 
 typedef NS_ENUM(int, SetSymbol) {
-    SetSymbolDiamond,
-    SetSymbolSquiggle,
-    SetSymbolOval
+    SetSymbolOne = 1,
+    SetSymbolTwo,
+    SetSymbolThree
 };
 
 
 typedef NS_ENUM(int, SetShading) {
-    SetShadingSolid,
-    SetShadingStriped,
-    SetShadingOpen
+    SetShadingOne = 1,
+    SetShadingTwo,
+    SetShadingThree
 };
 
 typedef NS_ENUM(int, SetColor) {
-    SetColorRed,
-    SetColorGreen,
-    SetColorPurple
+    SetColorOne = 1,
+    SetColorTwo,
+    SetColorThree
 };
 
 @interface SetCard : Card

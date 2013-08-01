@@ -70,13 +70,13 @@
         NSString *symbol;
         
         switch (setCard.symbol) {
-            case SetSymbolDiamond :
+            case SetSymbolOne :
                 symbol = @"▲";
                 break;
-            case SetSymbolSquiggle :
+            case SetSymbolTwo :
                 symbol = @"■";
                 break;
-            case SetSymbolOval :
+            case SetSymbolThree :
                 symbol = @"●";
                 break;
             default: // unkown symbol
@@ -90,13 +90,13 @@
         UIColor *color;
         
         switch(setCard.color) {
-            case SetColorRed:
+            case SetColorOne:
                 color = [UIColor colorWithRed:1.00 green:0.10 blue:0.07 alpha:1.00];
                 break;
-            case SetColorGreen:
+            case SetColorTwo:
                 color = [UIColor colorWithRed:0.00 green:0.84 blue:0.32 alpha:1.00];
                 break;
-            case SetColorPurple: // purple
+            case SetColorThree: // purple
                 color = [UIColor colorWithRed:0.42 green:0.15 blue:0.79 alpha:1.00];
                 break;
             default: // unknown color
@@ -111,13 +111,13 @@
         
         double alphaComponent;
         switch(setCard.shading) {
-            case SetShadingOpen:
+            case SetShadingOne:
                 alphaComponent = 0.0;
                 break;
-            case SetShadingStriped:
+            case SetShadingTwo:
                 alphaComponent = 0.3;
                 break;
-            case SetShadingSolid:
+            case SetShadingThree:
                 alphaComponent = 1.0;
                 break;
             default: // unknowm shading

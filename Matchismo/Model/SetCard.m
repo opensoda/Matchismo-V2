@@ -14,7 +14,7 @@
 
     int score = 0;
     
-    if (othercards.count == 2) {
+    if ([othercards count] == 2) {
         
         SetCard *card1 = self;
         SetCard *card2 = (SetCard *)othercards[0];

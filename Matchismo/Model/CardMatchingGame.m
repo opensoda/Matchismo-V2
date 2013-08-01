@@ -9,6 +9,7 @@
 #import "CardMatchingGame.h"
 
 @interface CardMatchingGame()
+@property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (nonatomic, readwrite) int score;
 @property (strong, nonatomic, readwrite) NSMutableArray *flippedCards;
@@ -55,8 +56,9 @@
     self = [super init];
     
     if (self) {
+        self.deck = deck;
         for (int i = 0; i < cardCount; i++) {
-            Card *card = [deck drawRandomCard];
+            Card *card = [self.deck drawRandomCard];
             if(!card) {
                 self = nil;
             } else {
@@ -111,8 +113,8 @@
                     [otherCards addObject:otherCard];
                     
                     // depending on matchingMode check for a two or three card match
-                    if ((self.matchingMode == MatchingMode_TwoCardMatch && self.flippedCards.count == 2)||
-                        (self.matchingMode == MatchingMode_ThreeCardMatch && self.flippedCards.count == 3)) {
+                    if ((self.matchingMode == MatchingMode_TwoCardMatch && [self.flippedCards count] == 2)||
+                        (self.matchingMode == MatchingMode_ThreeCardMatch && [self.flippedCards count] == 3)) {
                         
                         int matchScore = [card match:otherCards];
                         
@@ -139,10 +141,32 @@
     }
 }
 
-- (Card *)cardAtIndex:(NSUInteger)index {
-    return (index < self.cards.count) ? self.cards[index] : nil;
+- (void)deleteCardAtIndex:(NSUInteger)index {
+    if (index < [self.cards count]) {
+        [self.cards removeObjectAtIndex:index];
+    }
 }
 
+- (Card *)cardAtIndex:(NSUInteger)index {
+    return (index < [self.cards count]) ? self.cards[index] : nil;
+}
+
+- (NSUInteger)indexOfCard:(Card *)card {
+    return [self.cards indexOfObject:card];
+}
+
+- (NSUInteger)cardsCount {
+    return [self.cards count];
+}
+
+- (void)dealCardCount:(NSUInteger)cardCount {
+    for (int i = 0; i < cardCount; i++) {
+        Card *card = [self.deck drawRandomCard];
+        if(card) {
+            [self.cards addObject:card];
+        }
+    }
+}
 
 - (int)applyMatchBonusToMatchScore:(int)matchScore {
     
