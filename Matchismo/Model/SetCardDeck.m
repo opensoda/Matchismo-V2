@@ -17,9 +17,9 @@
     if (self)
     {
         for (int number = SetNumberOne; number <= SetNumberThree; number++) {
-            for (int symbol = SetSymbolDiamond; symbol <= SetSymbolOval; symbol++ ) {
-                for (int shading = SetShadingSolid; shading <= SetShadingOpen; shading++) {
-                    for (int color = SetColorRed; color <= SetColorPurple; color++) {
+            for (int symbol = SetSymbolOne; symbol <= SetSymbolThree; symbol++ ) {
+                for (int shading = SetShadingOne; shading <= SetShadingThree; shading++) {
+                    for (int color = SetColorOne; color <= SetColorThree; color++) {
                         SetCard *card = [[SetCard alloc] init];
                         card.number = (SetNumber)number;
                         card.symbol = (SetSymbol)symbol;

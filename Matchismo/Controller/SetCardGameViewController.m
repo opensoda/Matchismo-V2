@@ -40,21 +40,6 @@
      return [CardGameSettings integerValueForKey:SETCARDGAME_FLIPCOST_KEY];
 }
 
-- (void)updateCardButton:(UIButton *)cardButton
-                withCard:(Card *)card {
-
-    [cardButton setAttributedTitle:[self attributedStringForCard:card] forState:UIControlStateNormal];
-    
-    if (card.isFaceUp && !card.isUnplayable) {
-        [cardButton setBackgroundColor:[UIColor lightGrayColor]];
-    } else {
-        [cardButton setBackgroundColor:nil];
-    }
-    
-    cardButton.selected = card.isFaceUp;
-    cardButton.hidden = card.isUnplayable;
-}
-
 - (NSAttributedString *)attributedStringForCard:(Card *)card {
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -129,7 +114,7 @@
         
         attributedString = [[NSMutableAttributedString alloc] initWithString:symbols attributes:attributes];
     }
-                                    
+    
     return attributedString;
 }
 

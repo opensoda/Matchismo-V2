@@ -9,17 +9,21 @@
 #import "PlayingCardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCard.h"
+#import "PlayingCardCollectionViewCell.h"
+#import "PlayingCardView.h"
 
 @interface PlayingCardGameViewController ()
 
-@property (strong, nonatomic) UIImage *cardbackImage;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *playModeSegmentedControl;
-
-- (IBAction)playMode:(UISegmentedControl *)sender;
 
 @end
 
 @implementation PlayingCardGameViewController
+
+#define STARTING_CARD_COUNT 24
+
+- (NSUInteger)startingCardCount {
+    return STARTING_CARD_COUNT;
+}
 
 - (Deck *)createDeck {
     return [[PlayingCardDeck alloc] init];
@@ -30,7 +34,7 @@
 } 
 
 - (MatchingMode)matchingMode {
-    return self.playModeSegmentedControl.selectedSegmentIndex == 0 ? MatchingMode_TwoCardMatch : MatchingMode_ThreeCardMatch;
+    return [CardGameSettings integerValueForKey:MATCHCARDGAME_MATCHINGMODE_KEY];
 }
 
 - (int)matchBonus {
@@ -44,31 +48,30 @@
 - (int)flipCost {
     return [CardGameSettings integerValueForKey:MATCHCARDGAME_FLIPCOST_KEY];
 }
-- (void)updateSubClassUI{
-    [self updatePlayMode];
-}
 
-- (UIImage *)cardBackImage {
-    if (!_cardbackImage) _cardbackImage = [UIImage imageNamed:@"cardback.png"];
-    return _cardbackImage;
-}
-
-#define CARD_EDGE_INSET 6.0
-
-- (void)updateCardButton:(UIButton *)cardButton
-                withCard:(Card *)card {
-    [cardButton setTitle:card.contents forState:UIControlStateSelected];
-    [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
-    
-    cardButton.selected = card.isFaceUp;
-    cardButton.enabled = !card.isUnplayable;
-    cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-    
-    if (!cardButton.selected) {
-        [cardButton setImage:self.cardBackImage forState:UIControlStateNormal];
-        cardButton.imageEdgeInsets = UIEdgeInsetsMake(CARD_EDGE_INSET, CARD_EDGE_INSET, CARD_EDGE_INSET, CARD_EDGE_INSET);
-    } else {
-        [cardButton setImage:nil forState:UIControlStateNormal];
+- (void)updateCell:(UICollectionViewCell *)cell
+         usingCard:(Card *)card
+           animate:(BOOL)animate {
+    if ([cell isKindOfClass:[PlayingCardCollectionViewCell class]]) {
+        PlayingCardView *playingCardView = ((PlayingCardCollectionViewCell *)cell).playingCardView;
+        
+        if ([card isKindOfClass:[PlayingCard class]]) {
+            PlayingCard *playingCard = (PlayingCard *)card;
+            playingCardView.rank = playingCard.rank;
+            playingCardView.suit = playingCard.suit;
+            
+            if (animate) {
+                [UIView transitionWithView:playingCardView
+                                  duration:0.5
+                                   options:UIViewAnimationOptionTransitionFlipFromLeft
+                                animations:^{  playingCardView.faceUp = playingCard.isFaceUp;  }
+                                completion:NULL];
+            } else {
+               playingCardView.faceUp = playingCard.isFaceUp; 
+            }
+            
+            playingCardView.alpha = playingCard.isUnplayable ? 0.3 : 1.0;
+        }
     }
 }
 
@@ -82,19 +85,5 @@
     }
     return attributedString;
 }
-
-- (void)updatePlayMode {
-    self.playModeSegmentedControl.hidden = self.flipCount > 0;
-    if (self.flipCount == 0 ) {
-        self.game.matchingMode = self.playModeSegmentedControl.selectedSegmentIndex == 0 ? MatchingMode_TwoCardMatch : MatchingMode_ThreeCardMatch;
-    }
-}
-
-- (IBAction)playMode:(UISegmentedControl *)sender {
-    
-    [self updatePlayMode];
-}
-
-
 
 @end

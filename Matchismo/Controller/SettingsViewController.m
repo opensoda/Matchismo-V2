@@ -11,27 +11,29 @@
 #import "CardGameSettings.h"
 
 @interface SettingsViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *matchMatchingModeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *matchMatchBonusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *matchMismatchPenaltyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *matchFlipCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setMatchBonusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setMismatchPenaltyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *setFlipCostLabel;
+@property (weak, nonatomic) IBOutlet UILabel *setFlipCostLabel;  // not in UI
 
+@property (weak, nonatomic) IBOutlet UIStepper *matchMatchingMode;
 @property (weak, nonatomic) IBOutlet UIStepper *matchMatchBonus;
 @property (weak, nonatomic) IBOutlet UIStepper *matchMismatchPenalty;
 @property (weak, nonatomic) IBOutlet UIStepper *matchFlipCost;
 @property (weak, nonatomic) IBOutlet UIStepper *setMatchBonus;
 @property (weak, nonatomic) IBOutlet UIStepper *setMismatchPenalty;
-@property (weak, nonatomic) IBOutlet UIStepper *setFlipCost;
+@property (weak, nonatomic) IBOutlet UIStepper *setFlipCost; // not in UI
 
+- (IBAction)matchMatchingMode:(UIStepper *)sender;
 - (IBAction)matchMatchBonus:(UIStepper *)sender;
 - (IBAction)matchMismatchPenalty:(UIStepper *)sender;
 - (IBAction)matchFlipCost:(UIStepper *)sender;
 - (IBAction)setMatchBonus:(UIStepper *)sender;
 - (IBAction)setMismatchPenalty:(UIStepper *)sender;
-- (IBAction)setFlipCost:(UIStepper *)sender;
+- (IBAction)setFlipCost:(UIStepper *)sender;  // not in UI
 
 - (IBAction)deleteAllScores:(UIButton *)sender;
 - (IBAction)restoreDefaultSettings:(UIButton *)sender;
@@ -49,10 +51,12 @@
 - (void)updateUI {
     
      // update stepper values and labels
+    self.matchMatchingMode.value = [CardGameSettings integerValueForKey:MATCHCARDGAME_MATCHINGMODE_KEY];
     self.matchMatchBonus.value = [CardGameSettings integerValueForKey:MATCHCARDGAME_MATCHBONUS_KEY];
     self.matchMismatchPenalty.value = [CardGameSettings integerValueForKey:MATCHCARDGAME_MISMATCHPENALTY_KEY];
     self.matchFlipCost.value = [CardGameSettings integerValueForKey:MATCHCARDGAME_FLIPCOST_KEY];
     
+    self.matchMatchingModeLabel.text = [NSString stringWithFormat:@"%@", @(self.matchMatchingMode.value)];
     self.matchMatchBonusLabel.text = [NSString stringWithFormat:@"%@", @(self.matchMatchBonus.value)];
     self.matchMismatchPenaltyLabel.text = [NSString stringWithFormat:@"%@", @(self.matchMismatchPenalty.value)];
     self.matchFlipCostLabel.text = [NSString stringWithFormat:@"%@",  @(self.matchFlipCost.value)];
@@ -64,6 +68,11 @@
     self.setMatchBonusLabel.text = [NSString stringWithFormat:@"%@",  @(self.setMatchBonus.value)];
     self.setMismatchPenaltyLabel.text = [NSString stringWithFormat:@"%@", @(self.setMismatchPenalty.value)];
     self.setFlipCostLabel.text = [NSString stringWithFormat:@"%@", @(self.setFlipCost.value)];
+}
+
+- (IBAction)matchMatchingMode:(UIStepper *)sender {
+    [CardGameSettings setValue:@(sender.value) forKey:MATCHCARDGAME_MATCHINGMODE_KEY];
+    [self updateUI];
 }
 
 - (IBAction)matchMatchBonus:(UIStepper *)sender {

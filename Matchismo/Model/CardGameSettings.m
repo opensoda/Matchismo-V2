@@ -7,10 +7,12 @@
 //
 
 #import "CardGameSettings.h"
+#import "CardMatchingGame.h"
 
 @implementation CardGameSettings
 
 // Match Card Game default values
+#define MATCHCARDGAME_DEFAULT_MATCHINGMODE MatchingMode_TwoCardMatch
 #define MATCHCARDGAME_DEFAULT_MATCHBONUS 4
 #define MATCHCARDGAME_DEFAULT_MISMATCHPENALTY 2
 #define MATCHCARDGAME_DEFAULT_FLIPCOST 1
@@ -34,6 +36,7 @@
 }
 
 + (void)restoreDefaultSettings {
+    [self allSettings][MATCHCARDGAME_MATCHINGMODE_KEY] = @(MATCHCARDGAME_DEFAULT_MATCHINGMODE);
     [self allSettings][MATCHCARDGAME_MATCHBONUS_KEY] = @(MATCHCARDGAME_DEFAULT_MATCHBONUS);
     [self allSettings][MATCHCARDGAME_MISMATCHPENALTY_KEY] = @(MATCHCARDGAME_DEFAULT_MISMATCHPENALTY);
     [self allSettings][MATCHCARDGAME_FLIPCOST_KEY] = @(MATCHCARDGAME_DEFAULT_FLIPCOST);

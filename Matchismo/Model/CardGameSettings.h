@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define MATCHCARDGAME_MATCHINGMODE_KEY @"Match_MatchingMode"
 #define MATCHCARDGAME_MATCHBONUS_KEY @"Match_MatchBonus"
 #define MATCHCARDGAME_MISMATCHPENALTY_KEY @"Match_MismatchPenalty"
 #define MATCHCARDGAME_FLIPCOST_KEY @"Match_FlipCost"
