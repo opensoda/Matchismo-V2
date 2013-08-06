@@ -29,6 +29,8 @@
          usingCard:(Card *)card
            animate:(BOOL)animate; // abstract
 
+- (NSString *)reuseIdentifier; //abstract
+
 - (NSAttributedString *)attributedStringForCard:(Card *)card; // abstract
 
 @end

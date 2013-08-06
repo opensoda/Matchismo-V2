@@ -9,12 +9,20 @@
 #import "SetCardGameViewController.h"
 #import "SetCardDeck.h"
 #import "SetCard.h"
+#import "SetCardCollectionViewCell.h"
+#import "SetCardView.h"
 
 @interface SetCardGameViewController ()
 
 @end
 
 @implementation SetCardGameViewController
+
+#define STARTING_CARD_COUNT 12
+
+- (NSUInteger)startingCardCount {
+    return STARTING_CARD_COUNT;
+}
 
 - (Deck *)createDeck {
     return [[SetCardDeck alloc] init];
@@ -38,6 +46,38 @@
 
 - (int)flipCost {
      return [CardGameSettings integerValueForKey:SETCARDGAME_FLIPCOST_KEY];
+}
+
+- (NSString *)reuseIdentifier {
+    return @"SetCard";
+}
+
+- (void)updateCell:(UICollectionViewCell *)cell
+         usingCard:(Card *)card
+           animate:(BOOL)animate {
+    if ([cell isKindOfClass:[SetCardCollectionViewCell class]]) {
+        SetCardView *setCardView = ((SetCardCollectionViewCell *)cell).setCardView;
+        
+        if ([card isKindOfClass:[SetCard class]]) {
+            SetCard *setCard = (SetCard *)card;
+            setCardView.number = (int)setCard.number;
+            setCardView.symbol = (int)setCard.symbol;
+            setCardView.shading = (int)setCard.shading;
+            setCardView.color = (int)setCard.color;
+            
+            if (animate) {
+                [UIView transitionWithView:setCardView
+                                  duration:0.5
+                                   options:UIViewAnimationOptionTransitionFlipFromLeft
+                                animations:^{  setCardView.faceUp = setCard.isFaceUp;  }
+                                completion:NULL];
+            } else {
+                setCardView.faceUp = setCard.isFaceUp;
+            }
+            
+            setCardView.alpha = setCard.isUnplayable ? 0.3 : 1.0;
+        }
+    }
 }
 
 - (NSAttributedString *)attributedStringForCard:(Card *)card {

@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
 
-
-
 - (IBAction)deal:(UIButton *)sender;
 
 @end
@@ -43,7 +41,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCard" forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self reuseIdentifier] forIndexPath:indexPath];
     Card *card = [self.game cardAtIndex:indexPath.item];
     [self updateCell:cell usingCard:card animate:NO];
     return cell;
@@ -53,6 +51,10 @@
          usingCard:(Card *)card
            animate:(BOOL)animate {
     
+} // abstract
+
+- (NSString *)reuseIdentifier {
+    return nil;
 } // abstract
 
 - (NSAttributedString *)attributedStringForCard:(Card *)card {

@@ -49,6 +49,10 @@
     return [CardGameSettings integerValueForKey:MATCHCARDGAME_FLIPCOST_KEY];
 }
 
+- (NSString *)reuseIdentifier {
+    return @"PlayingCard";
+} 
+
 - (void)updateCell:(UICollectionViewCell *)cell
          usingCard:(Card *)card
            animate:(BOOL)animate {

@@ -14,18 +14,15 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORj-pa-Vxj">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-x2-0QZ">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02i-Tt-rgG">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="abI-EP-5TA"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,7 +37,7 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-Ci-3bP">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="1bR-EE-qh3"/>
+                                    <constraint firstAttribute="height" constant="29" type="user" id="i7M-1n-XRR"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
@@ -49,17 +46,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zQb-7h-Akq">
-                                    <size key="itemSize" width="58" height="85"/>
+                                    <size key="itemSize" width="61" height="85"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayingCard" id="lQJ-wb-st8" customClass="PlayingCardCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="58" height="85"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="58" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="61" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgT-I2-GMj" customClass="PlayingCardView">
@@ -88,21 +85,22 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="m6c-Ci-3bP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4jh-TM-DC1"/>
+                            <constraint firstItem="m6c-Ci-3bP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DtD-Ep-0Qa"/>
                             <constraint firstItem="gb9-x2-0QZ" firstAttribute="leading" secondItem="02i-Tt-rgG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Eti-d9-5q0"/>
                             <constraint firstItem="ORj-pa-Vxj" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L9v-2b-bp3"/>
-                            <constraint firstAttribute="trailing" secondItem="m6c-Ci-3bP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LAU-VR-hrq"/>
                             <constraint firstAttribute="trailing" secondItem="zqA-fG-lqr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="N7o-eJ-Jrt"/>
-                            <constraint firstItem="02i-Tt-rgG" firstAttribute="centerX" secondItem="m6c-Ci-3bP" secondAttribute="centerX" type="default" id="VIE-7T-o5b"/>
                             <constraint firstItem="gb9-x2-0QZ" firstAttribute="baseline" secondItem="02i-Tt-rgG" secondAttribute="baseline" type="default" id="YMc-Ph-Om6"/>
+                            <constraint firstItem="02i-Tt-rgG" firstAttribute="width" secondItem="ORj-pa-Vxj" secondAttribute="width" type="user" id="a3r-BR-y1k"/>
                             <constraint firstItem="zqA-fG-lqr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="e1i-e4-mml"/>
                             <constraint firstAttribute="bottom" secondItem="02i-Tt-rgG" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hbt-ux-ls0"/>
+                            <constraint firstItem="gb9-x2-0QZ" firstAttribute="width" secondItem="02i-Tt-rgG" secondAttribute="width" type="user" id="nY9-z6-i8p"/>
                             <constraint firstItem="m6c-Ci-3bP" firstAttribute="top" secondItem="zqA-fG-lqr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ooB-wv-PFH"/>
                             <constraint firstItem="ORj-pa-Vxj" firstAttribute="baseline" secondItem="02i-Tt-rgG" secondAttribute="baseline" type="default" id="pu2-sW-pyo"/>
                             <constraint firstItem="02i-Tt-rgG" firstAttribute="top" secondItem="m6c-Ci-3bP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qHl-aa-RXo"/>
+                            <constraint firstAttribute="trailing" secondItem="m6c-Ci-3bP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rSc-JL-NKK"/>
                             <constraint firstItem="zqA-fG-lqr" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="voj-RY-V97"/>
                             <constraint firstAttribute="trailing" secondItem="gb9-x2-0QZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xrG-ba-oYM"/>
                             <constraint firstItem="02i-Tt-rgG" firstAttribute="leading" secondItem="ORj-pa-Vxj" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="y5z-Ta-ufo"/>
@@ -144,9 +142,6 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grg-Oa-ED5">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="nfm-96-UdJ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Date">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,9 +155,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR5-Kn-L8e">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="C5B-Vr-TDZ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Score">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -176,9 +168,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7s-tu-Sal">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="Gsc-XO-i1H"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Duration">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,15 +181,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="grg-Oa-ED5" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="48L-hx-iE2"/>
                             <constraint firstItem="r2k-o0-G1a" firstAttribute="leading" secondItem="G7g-4k-ghy" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6BY-m6-UvF"/>
                             <constraint firstAttribute="bottom" secondItem="b7s-tu-Sal" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="9AW-v0-0Z6"/>
-                            <constraint firstItem="lR5-Kn-L8e" firstAttribute="centerX" secondItem="r2k-o0-G1a" secondAttribute="centerX" type="default" id="9Z7-b7-d3T"/>
                             <constraint firstAttribute="trailing" secondItem="b7s-tu-Sal" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XDK-Pn-ACz"/>
+                            <constraint firstAttribute="centerX" secondItem="lR5-Kn-L8e" secondAttribute="centerX" type="user" id="YEQ-Zu-tU1"/>
                             <constraint firstItem="grg-Oa-ED5" firstAttribute="top" secondItem="r2k-o0-G1a" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZmE-9R-KJ5"/>
+                            <constraint firstItem="b7s-tu-Sal" firstAttribute="width" secondItem="lR5-Kn-L8e" secondAttribute="width" type="user" id="adu-st-DPo"/>
                             <constraint firstAttribute="bottom" secondItem="lR5-Kn-L8e" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cKm-yG-PeR"/>
+                            <constraint firstItem="grg-Oa-ED5" firstAttribute="width" secondItem="lR5-Kn-L8e" secondAttribute="width" type="user" id="fFW-wd-QiS"/>
                             <constraint firstAttribute="trailing" secondItem="r2k-o0-G1a" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sK9-oO-eok"/>
                             <constraint firstItem="grg-Oa-ED5" firstAttribute="leading" secondItem="G7g-4k-ghy" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tXP-zn-sNF"/>
                             <constraint firstItem="r2k-o0-G1a" firstAttribute="top" secondItem="G7g-4k-ghy" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zQw-J9-G8c"/>
@@ -519,18 +510,15 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtv-lS-26F">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVu-q1-pkd">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-Aw-kY9">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Mkj-5O-Atn"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -550,30 +538,88 @@
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mE8-K9-wVd">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NLf-p8-LaI">
+                                    <size key="itemSize" width="85" height="61"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SetCard" id="7Ft-E4-KwL" customClass="SetCardCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" restorationIdentifier="" translatesAutoresizingMaskIntoConstraints="NO" id="33g-dI-u3D" customClass="SetCardView">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="33g-dI-u3D" firstAttribute="leading" secondItem="7Ft-E4-KwL" secondAttribute="leading" type="default" id="6vp-WA-kqo"/>
+                                            <constraint firstItem="33g-dI-u3D" firstAttribute="bottom" secondItem="7Ft-E4-KwL" secondAttribute="bottom" type="default" id="PNb-KN-nwg"/>
+                                            <constraint firstItem="33g-dI-u3D" firstAttribute="top" secondItem="7Ft-E4-KwL" secondAttribute="top" type="default" id="r66-An-wwJ"/>
+                                            <constraint firstItem="33g-dI-u3D" firstAttribute="trailing" secondItem="7Ft-E4-KwL" secondAttribute="trailing" type="default" id="vCy-Qx-eIl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="setCardView" destination="33g-dI-u3D" id="Pq9-5V-QB2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="egz-FR-MyB" id="DAY-EY-cg8"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZGT-Hs-YgX" appends="YES" id="O7y-Hq-uJQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="NEQ-YD-JPM" appends="YES" id="WSm-ys-pjK"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tBG-Aw-kY9" firstAttribute="leading" secondItem="dtv-lS-26F" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4vd-CY-t2j"/>
+                            <constraint firstItem="SCg-Dv-Yww" firstAttribute="top" secondItem="mE8-K9-wVd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6mZ-cw-zPb"/>
                             <constraint firstItem="yVu-q1-pkd" firstAttribute="leading" secondItem="tBG-Aw-kY9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="A3p-tM-KP6"/>
+                            <constraint firstAttribute="trailing" secondItem="mE8-K9-wVd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="HQu-rK-GJQ"/>
                             <constraint firstItem="dtv-lS-26F" firstAttribute="baseline" secondItem="tBG-Aw-kY9" secondAttribute="baseline" type="default" id="Kt4-ad-unJ"/>
+                            <constraint firstItem="tBG-Aw-kY9" firstAttribute="width" secondItem="dtv-lS-26F" secondAttribute="width" type="user" id="Rdz-Wp-O4g"/>
+                            <constraint firstItem="mE8-K9-wVd" firstAttribute="top" secondItem="zP2-xX-8YX" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Soj-eE-AgT"/>
                             <constraint firstItem="tBG-Aw-kY9" firstAttribute="top" secondItem="SCg-Dv-Yww" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TKn-nV-XWJ"/>
                             <constraint firstAttribute="trailing" secondItem="SCg-Dv-Yww" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Tre-LH-N3z"/>
+                            <constraint firstItem="mE8-K9-wVd" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XnM-xK-SQx"/>
                             <constraint firstItem="yVu-q1-pkd" firstAttribute="baseline" secondItem="tBG-Aw-kY9" secondAttribute="baseline" type="default" id="Y4Z-dL-bBW"/>
+                            <constraint firstItem="tBG-Aw-kY9" firstAttribute="width" secondItem="yVu-q1-pkd" secondAttribute="width" type="user" id="ew6-x7-oq3"/>
                             <constraint firstAttribute="bottom" secondItem="tBG-Aw-kY9" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jZj-Ve-E2P"/>
                             <constraint firstAttribute="trailing" secondItem="yVu-q1-pkd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kAw-1W-G4X"/>
                             <constraint firstItem="SCg-Dv-Yww" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qgU-T7-tyf"/>
                             <constraint firstItem="dtv-lS-26F" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wpE-lM-hqE"/>
-                            <constraint firstItem="tBG-Aw-kY9" firstAttribute="centerX" secondItem="SCg-Dv-Yww" secondAttribute="centerX" type="default" id="yww-h1-mjX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set" image="set.png" id="3gi-GY-hJg"/>
                     <connections>
+                        <outlet property="cardCollectionView" destination="mE8-K9-wVd" id="EMz-mF-fPs"/>
                         <outlet property="flipResultsLabel" destination="SCg-Dv-Yww" id="Xsk-nf-4tH"/>
                         <outlet property="flipsLabel" destination="dtv-lS-26F" id="UtT-Ym-1E7"/>
                         <outlet property="scoreLabel" destination="yVu-q1-pkd" id="Qdg-XM-Naz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrD-w9-pJB" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZGT-Hs-YgX">
+                    <connections>
+                        <action selector="flipCardOnTap:" destination="egz-FR-MyB" id="gqt-l3-Mhk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="NEQ-YD-JPM">
+                    <connections>
+                        <action selector="flipCardOnSwipe:" destination="egz-FR-MyB" id="JZP-2o-iYj"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="93" y="-531"/>
         </scene>
@@ -589,8 +635,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="deal:" candidateClass="UIButton"/>
-                <relationship kind="action" name="flipCardOnSwipe:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="action" name="flipCardOnTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="flipResultsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
@@ -621,8 +665,17 @@
         <class className="PlayingCardView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
         </class>
+        <class className="SetCardCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="setCardView" candidateClass="SetCardView"/>
+            </relationships>
+        </class>
         <class className="SetCardGameViewController" superclassName="CardGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardGameViewController.h"/>
+        </class>
+        <class className="SetCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardView.h"/>
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
@@ -660,9 +713,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
