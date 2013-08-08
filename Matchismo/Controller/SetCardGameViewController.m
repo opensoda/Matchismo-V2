@@ -19,6 +19,7 @@
 @implementation SetCardGameViewController
 
 #define STARTING_CARD_COUNT 12
+#define CELL_REUSE_IDENTIFIER @"SetCard"
 
 - (NSUInteger)startingCardCount {
     return STARTING_CARD_COUNT;
@@ -48,8 +49,12 @@
      return [CardGameSettings integerValueForKey:SETCARDGAME_FLIPCOST_KEY];
 }
 
-- (NSString *)reuseIdentifier {
-    return @"SetCard";
+- (BOOL)deleteCardMatches {
+    return YES;
+}
+
+- (NSString *)cellReuseIdentifier {
+    return CELL_REUSE_IDENTIFIER;
 }
 
 - (void)updateCell:(UICollectionViewCell *)cell

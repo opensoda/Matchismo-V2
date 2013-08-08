@@ -36,13 +36,13 @@
     [roundedRect addClip];
     
     if (self.faceUp) {
-        [[UIColor colorWithWhite:0.8 alpha:1.0] setFill];
+        [[UIColor colorWithWhite:0.6 alpha:1.0] setFill];
     } else {
         [[UIColor whiteColor] setFill];
     }
     UIRectFill(self.bounds);
     
-    [[UIColor colorWithWhite:0.8 alpha:1.0] setStroke];
+    [[UIColor colorWithWhite:0.6 alpha:1.0] setStroke];
     [roundedRect stroke];
     
     [self drawSymbols];

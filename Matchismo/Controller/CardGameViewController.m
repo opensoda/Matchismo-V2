@@ -15,12 +15,14 @@
 @property (nonatomic) int flipCardAtIndex;
 
 @property (nonatomic, readwrite) int flipCount;
+
 @property (strong, nonatomic) CardGameResult *gameResult;
 
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
+@property (nonatomic) int deletedCardCollectionViewCellCount;
 
 - (IBAction)deal:(UIButton *)sender;
 
@@ -41,7 +43,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self reuseIdentifier] forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self cellReuseIdentifier] forIndexPath:indexPath];
     Card *card = [self.game cardAtIndex:indexPath.item];
     [self updateCell:cell usingCard:card animate:NO];
     return cell;
@@ -53,7 +55,7 @@
     
 } // abstract
 
-- (NSString *)reuseIdentifier {
+- (NSString *)cellReuseIdentifier {
     return nil;
 } // abstract
 
@@ -103,6 +105,43 @@
 - (int)flipCost {
     return 0;
 } // abstract
+
+- (BOOL)deleteCardMatches {
+    return NO;
+} // abstract
+
+
+- (void)insertCardCollectionViewCells {
+    if (self.deletedCardCollectionViewCellCount > 0) {
+        
+        NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+        for (int row = 0; row < self.deletedCardCollectionViewCellCount; row++ ) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
+        }
+        
+        [self.cardCollectionView insertItemsAtIndexPaths:indexPaths];
+        self.deletedCardCollectionViewCellCount -= [indexPaths count];
+    }
+}
+
+- (void)deleteCardCollectionViewCells {
+    if ([self deleteCardMatches] && self.game.flipScore > 0) {
+        
+        // delete matched cards from game
+        for (Card *card in self.game.flippedCards) {
+            [self.game deleteCardAtIndex:[self.game indexOfCard:card]];  
+        }
+        
+        NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+        for (int row = 0; row < [self.game.flippedCards count]; row++ ) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
+        }
+        
+        [self.cardCollectionView deleteItemsAtIndexPaths:indexPaths];
+        self.deletedCardCollectionViewCellCount += [indexPaths count];
+    }
+}
+
 
 - (void)setFlipCardAtIndex:(int)flipCardAtIndex {
     _flipCardAtIndex = flipCardAtIndex;
@@ -179,10 +218,14 @@
     NSIndexPath *indexPath = [self.cardCollectionView indexPathForItemAtPoint:gestureLocation];
     
     if (indexPath) {
-        [self.game flipCardAtIndex:indexPath.item];
-        self.gameResult.score = self.game.score;
-        self.flipCount++;
-        self.flipCardAtIndex = indexPath.item;
+        Card *card = [self.game cardAtIndex:indexPath.item];
+        if (!card.isUnplayable) {
+            [self.game flipCardAtIndex:indexPath.item];
+            self.gameResult.score = self.game.score;
+            self.flipCount++;
+            [self deleteCardCollectionViewCells];
+            self.flipCardAtIndex = indexPath.item;
+        }
     }
 }
 
@@ -190,6 +233,7 @@
     self.game = nil;
     self.gameResult = nil;
     self.flipCount = 0;
+    [self insertCardCollectionViewCells];
     self.flipCardAtIndex = FLIP_CARD_AT_INDEX_ALL_CARDS;
 }
 

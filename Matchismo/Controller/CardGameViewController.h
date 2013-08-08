@@ -14,7 +14,7 @@
 
 @interface CardGameViewController : UIViewController
 
-@property (strong, nonatomic) CardMatchingGame *game;  // TODO: make private ???
+@property (strong, nonatomic) CardMatchingGame *game;
 @property (nonatomic, readonly) int flipCount;
 @property (nonatomic)NSUInteger startingCardCount; // abstract
 
@@ -24,12 +24,13 @@
 - (int)matchBonus; // abstract
 - (int)mismatchPenalty; // abstract
 - (int)flipCost; // abstract
+- (BOOL)deleteCardMatches; // abstract
 
 - (void)updateCell:(UICollectionViewCell *)cell
          usingCard:(Card *)card
            animate:(BOOL)animate; // abstract
 
-- (NSString *)reuseIdentifier; //abstract
+- (NSString *)cellReuseIdentifier; //abstract
 
 - (NSAttributedString *)attributedStringForCard:(Card *)card; // abstract
 
