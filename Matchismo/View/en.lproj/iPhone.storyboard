@@ -23,6 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02i-Tt-rgG">
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -32,6 +33,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deal:" destination="2" eventType="touchUpInside" id="SDv-nO-rYL"/>
+                                    <outletCollection property="gestureRecognizers" destination="REe-9x-Zwm" appends="YES" id="1CQ-50-2oT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-Ci-3bP">
@@ -108,6 +110,7 @@
                     <tabBarItem key="tabBarItem" title="Match" image="spade.png" id="0eR-py-MZg"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="zqA-fG-lqr" id="1qy-Q5-VR0"/>
+                        <outlet property="dealButton" destination="02i-Tt-rgG" id="cSk-xb-aWz"/>
                         <outlet property="flipResultsLabel" destination="m6c-Ci-3bP" id="msB-T5-shy"/>
                         <outlet property="flipsLabel" destination="ORj-pa-Vxj" id="ql5-Yz-E1B"/>
                         <outlet property="scoreLabel" destination="gb9-x2-0QZ" id="JOT-oH-U8D"/>
@@ -122,6 +125,11 @@
                 <swipeGestureRecognizer direction="right" id="mXo-T0-eTy">
                     <connections>
                         <action selector="flipCardOnSwipe:" destination="2" id="xk8-dy-efw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="REe-9x-Zwm">
+                    <connections>
+                        <action selector="dealMoreCardsOnSwipe:" destination="2" id="dGj-Vx-hB0"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -517,6 +525,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-Aw-kY9">
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -526,6 +535,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deal:" destination="egz-FR-MyB" eventType="touchUpInside" id="a2e-Qh-Jin"/>
+                                    <outletCollection property="gestureRecognizers" destination="A7U-Gx-ef4" appends="YES" id="9Lf-e6-0Lw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SCg-Dv-Yww">
@@ -591,8 +601,8 @@
                             <constraint firstAttribute="trailing" secondItem="SCg-Dv-Yww" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Tre-LH-N3z"/>
                             <constraint firstItem="mE8-K9-wVd" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XnM-xK-SQx"/>
                             <constraint firstItem="yVu-q1-pkd" firstAttribute="baseline" secondItem="tBG-Aw-kY9" secondAttribute="baseline" type="default" id="Y4Z-dL-bBW"/>
+                            <constraint firstAttribute="bottom" secondItem="tBG-Aw-kY9" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ai5-5D-wKe"/>
                             <constraint firstItem="tBG-Aw-kY9" firstAttribute="width" secondItem="yVu-q1-pkd" secondAttribute="width" type="user" id="ew6-x7-oq3"/>
-                            <constraint firstAttribute="bottom" secondItem="tBG-Aw-kY9" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="jZj-Ve-E2P"/>
                             <constraint firstAttribute="trailing" secondItem="yVu-q1-pkd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kAw-1W-G4X"/>
                             <constraint firstItem="SCg-Dv-Yww" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qgU-T7-tyf"/>
                             <constraint firstItem="dtv-lS-26F" firstAttribute="leading" secondItem="zP2-xX-8YX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wpE-lM-hqE"/>
@@ -601,6 +611,7 @@
                     <tabBarItem key="tabBarItem" title="Set" image="set.png" id="3gi-GY-hJg"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="mE8-K9-wVd" id="EMz-mF-fPs"/>
+                        <outlet property="dealButton" destination="tBG-Aw-kY9" id="azw-ia-5fV"/>
                         <outlet property="flipResultsLabel" destination="SCg-Dv-Yww" id="Xsk-nf-4tH"/>
                         <outlet property="flipsLabel" destination="dtv-lS-26F" id="UtT-Ym-1E7"/>
                         <outlet property="scoreLabel" destination="yVu-q1-pkd" id="Qdg-XM-Naz"/>
@@ -615,6 +626,11 @@
                 <swipeGestureRecognizer direction="right" id="NEQ-YD-JPM">
                     <connections>
                         <action selector="flipCardOnSwipe:" destination="egz-FR-MyB" id="JZP-2o-iYj"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="A7U-Gx-ef4">
+                    <connections>
+                        <action selector="dealMoreCardsOnSwipe:" destination="egz-FR-MyB" id="KUL-6M-ODT"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -632,7 +648,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="deal:" candidateClass="UIButton"/>
+                <relationship kind="action" name="dealMoreCardsOnSwipe:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="flipCardOnSwipe:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="flipCardOnTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="dealButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipResultsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>

@@ -19,10 +19,15 @@
 @implementation SetCardGameViewController
 
 #define STARTING_CARD_COUNT 12
+#define MORE_CARD_COUNT 3
 #define CELL_REUSE_IDENTIFIER @"SetCard"
 
-- (NSUInteger)startingCardCount {
+- (int)startingCardCount {
     return STARTING_CARD_COUNT;
+}
+
+- (int)moreCardCount {
+    return MORE_CARD_COUNT;
 }
 
 - (Deck *)createDeck {

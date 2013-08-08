@@ -16,7 +16,8 @@
 
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (nonatomic, readonly) int flipCount;
-@property (nonatomic)NSUInteger startingCardCount; // abstract
+@property (nonatomic)int startingCardCount; // abstract
+@property (nonatomic)int moreCardCount; // abstract
 
 - (Deck *)createDeck;    // abstract
 - (GameType)gameType; // abstract

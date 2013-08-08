@@ -59,7 +59,10 @@ typedef NS_ENUM(NSInteger, MatchingMode) {
 
 - (NSUInteger)cardsCount;
 
+- (NSUInteger)deckCardsCount;
+
 - (void)dealCardCount:(NSUInteger)cardCount;
+
 
 
 

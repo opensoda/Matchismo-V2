@@ -159,6 +159,10 @@
     return [self.cards count];
 }
 
+- (NSUInteger)deckCardsCount {
+    return [self.deck cardsCount];
+}
+
 - (void)dealCardCount:(NSUInteger)cardCount {
     for (int i = 0; i < cardCount; i++) {
         Card *card = [self.deck drawRandomCard];

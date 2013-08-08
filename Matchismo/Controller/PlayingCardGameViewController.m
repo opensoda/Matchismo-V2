@@ -20,10 +20,15 @@
 @implementation PlayingCardGameViewController
 
 #define STARTING_CARD_COUNT 24
+#define MORE_CARD_COUNT 4
 #define CELL_REUSE_IDENTIFIER @"PlayingCard"
 
-- (NSUInteger)startingCardCount {
+- (int)startingCardCount {
     return STARTING_CARD_COUNT;
+}
+
+- (int)moreCardCount {
+    return MORE_CARD_COUNT;
 }
 
 - (Deck *)createDeck {
@@ -51,7 +56,7 @@
 }
 
 - (BOOL)deleteCardMatches {
-    return NO;
+    return YES;
 }
 
 - (NSString *)cellReuseIdentifier {

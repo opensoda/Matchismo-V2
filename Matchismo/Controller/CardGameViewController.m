@@ -18,11 +18,13 @@
 
 @property (strong, nonatomic) CardGameResult *gameResult;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
+@property (nonatomic) int insertedVersusDeletedCellCount;
+
 @property (weak, nonatomic) IBOutlet UILabel *flipResultsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dealButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *cardCollectionView;
-@property (nonatomic) int deletedCardCollectionViewCellCount;
 
 - (IBAction)deal:(UIButton *)sender;
 
@@ -53,6 +55,10 @@
          usingCard:(Card *)card
            animate:(BOOL)animate {
     
+} // abstract
+
+- (int)moreCardCount {
+    return 0;
 } // abstract
 
 - (NSString *)cellReuseIdentifier {
@@ -111,37 +117,27 @@
 } // abstract
 
 
-- (void)insertCardCollectionViewCells {
-    if (self.deletedCardCollectionViewCellCount > 0) {
-        
+- (void)insertCellsForCardCount:(int)cardCount {
+    if (cardCount > 0) {
         NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
-        for (int row = 0; row < self.deletedCardCollectionViewCellCount; row++ ) {
+        for (int row = self.game.cardsCount - cardCount ; row < self.game.cardsCount; row++) {
             [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
         }
-        
         [self.cardCollectionView insertItemsAtIndexPaths:indexPaths];
-        self.deletedCardCollectionViewCellCount -= [indexPaths count];
-    }
+        self.insertedVersusDeletedCellCount += [indexPaths count];
+    }     
 }
 
-- (void)deleteCardCollectionViewCells {
-    if ([self deleteCardMatches] && self.game.flipScore > 0) {
-        
-        // delete matched cards from game
-        for (Card *card in self.game.flippedCards) {
-            [self.game deleteCardAtIndex:[self.game indexOfCard:card]];  
-        }
-        
+- (void)deleteCellsForCardCount:(int)cardCount {
+    if (cardCount > 0) {
         NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
-        for (int row = 0; row < [self.game.flippedCards count]; row++ ) {
+        for (int row = 0; row < cardCount; row++ ) {
             [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
         }
-        
         [self.cardCollectionView deleteItemsAtIndexPaths:indexPaths];
-        self.deletedCardCollectionViewCellCount += [indexPaths count];
+        self.insertedVersusDeletedCellCount -= [indexPaths count];
     }
 }
-
 
 - (void)setFlipCardAtIndex:(int)flipCardAtIndex {
     _flipCardAtIndex = flipCardAtIndex;
@@ -163,7 +159,6 @@
 }
 
 - (void)updateLabels {
-    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
@@ -205,6 +200,25 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
+- (void)updateDealButton {
+    self.dealButton.tintColor = (int)[self.game deckCardsCount] > 0 ? nil : [UIColor redColor];
+}
+
+- (IBAction)dealMoreCardsOnSwipe:(UISwipeGestureRecognizer *)sender {
+    [self dealMoreCards];
+}
+
+- (void)dealMoreCards {
+    int cardCount = ((int)[self.game deckCardsCount] - (int)[self moreCardCount]) < 0 ? [self.game deckCardsCount] : [self moreCardCount];
+    [self.game dealCardCount:cardCount];
+    [self insertCellsForCardCount:cardCount];
+    
+    [self.cardCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.game.cardsCount - 1 inSection:0]
+                                    atScrollPosition:UICollectionViewScrollPositionBottom
+                                            animated:YES];
+    [self updateDealButton];
+}
+
 - (IBAction)flipCardOnSwipe:(UISwipeGestureRecognizer *)gesture {
     [self flipCard:gesture];
 }
@@ -223,18 +237,36 @@
             [self.game flipCardAtIndex:indexPath.item];
             self.gameResult.score = self.game.score;
             self.flipCount++;
-            [self deleteCardCollectionViewCells];
+            if ([self deleteCardMatches] && [self flippedCardsMatch]) {
+                // delete cards from game
+                for (Card *card in self.game.flippedCards) {
+                    [self.game deleteCardAtIndex:[self.game indexOfCard:card]];
+                }
+                
+                [self deleteCellsForCardCount:[self.game.flippedCards count]];
+            }
             self.flipCardAtIndex = indexPath.item;
         }
     }
+}
+
+- (BOOL)flippedCardsMatch {
+    return  self.game.flipScore > 0;
 }
 
 - (IBAction)deal:(UIButton *)sender {
     self.game = nil;
     self.gameResult = nil;
     self.flipCount = 0;
-    [self insertCardCollectionViewCells];
+    
+    if (self.insertedVersusDeletedCellCount > 0) {
+        [self deleteCellsForCardCount:self.insertedVersusDeletedCellCount];
+    } else if (self.insertedVersusDeletedCellCount < 0) { 
+        [self insertCellsForCardCount:(self.insertedVersusDeletedCellCount * -1)];
+    }
+
     self.flipCardAtIndex = FLIP_CARD_AT_INDEX_ALL_CARDS;
+    [self updateDealButton];
 }
 
 
